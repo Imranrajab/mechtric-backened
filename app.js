@@ -14,6 +14,6 @@ app.use(cors(options));
 
 app.use("/metric", metricRouter);
 
-app.listen(PORT, "localhost", () => {
+app.listen(PORT,  () => {
   console.log (`Server running on port ${PORT}`);
 });
