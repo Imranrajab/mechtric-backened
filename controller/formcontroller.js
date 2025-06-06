@@ -1,13 +1,6 @@
 const express = require("express")
 const mongo = require("mongoose")
-mongoose.connect(process.env.MONGO_URL, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-.then(() => console.log("MongoDB connected"))
-.catch((err) => console.error("MongoDB connection error", err)); 
-const metric = require("../modal/formmodal");
-
+mongo.connect("mongodb://127.0.0.1:27017/test").catch((e) => console.log("not connected"));
 exports.getmetric = async (req, res) => {
   const result = await metric.find({});
   res.send({ msg: "Data retrieved", value: result });
